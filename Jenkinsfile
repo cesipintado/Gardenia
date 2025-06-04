@@ -11,7 +11,7 @@ pipeline {
             steps {
                 timeout(time: 2, unit: 'MINUTES'){
                     // Especifica la rama master explícitamente para mayor claridad.
-                    git branch: 'master', url: 'https://github.com/cesipintado/Gardenia.git'
+                    git branch: 'main', url: 'https://github.com/cesipintado/Gardenia.git'
                 }
             }
         }
@@ -44,7 +44,7 @@ pipeline {
         }
         stage('Quality gate') {
             steps {
-                sleep(10) //seconds 
+                sleep(10) //seconds
 
                 timeout(time: 10, unit: 'MINUTES'){
                     waitForQualityGate abortPipeline: true
